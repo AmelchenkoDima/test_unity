@@ -71,7 +71,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-PackageCache
+[Ll]ibrary/PackageCache/
 
 .Runtime
 *.dylib
