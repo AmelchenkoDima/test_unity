@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int _extraJump = 2;
 
     private float _groundHeight = 1f;
-    
 
+    private bool _isEnemy;
     private bool _isGrounded;
     private bool _facingRight = true;
     private int _remainingJump;
