@@ -13,6 +13,7 @@ public class FlyingMonsters : MonoBehaviour
     private Vector2 _lastPlayerPosition;
     private int _index;
     private bool _facingLeft = true;
+    private Vector2 _raycastDirection;
 
     [SerializeField] private Transform _player;
     [SerializeField] private GameObject _afterDeadPrefab;
@@ -26,24 +27,21 @@ public class FlyingMonsters : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _raycastDirection = Vector2.zero;
 
     }
 
     private void Update()
     {
-        _visiblePlayer = Physics2D.Raycast(transform.position, Vector2.left, _rayDistance, _layerMask);
-
-        if (_visiblePlayer)
-        {
-            Attack();
-        }
-
+        _visiblePlayer = Physics2D.Raycast(transform.position, _raycastDirection, _rayDistance, _layerMask);
     }
+
 
     private void FixedUpdate()
     {
         ChoisePatrolPoint();
     }
+
 
     private void ChoisePatrolPoint()
     {
@@ -65,6 +63,8 @@ public class FlyingMonsters : MonoBehaviour
             Patrol(_index);
         }
     }
+
+
     private void Patrol(int currentPointIndex)
     {
         var position = new Vector2(_patrolEnemy[currentPointIndex], transform.position.y);
@@ -73,15 +73,18 @@ public class FlyingMonsters : MonoBehaviour
         _rigidbody.MovePosition(newPosition);
     }
 
+
     private void Flip()
     {
         _facingLeft = !_facingLeft;
         Vector3 scale = transform.localScale;
         scale.x *= -1;
+        _raycastDirection.x = - scale.x;
         transform.localScale = scale;
     }
 
-    private void Attack()
+
+    private void AttackPlayer()
     {
         if (_visiblePlayer)
         {
@@ -102,6 +105,7 @@ public class FlyingMonsters : MonoBehaviour
             _rigidbody.velocity = new Vector2(direction.x * _monsrerData.AttackSpeed, _rigidbody.velocity.y);
         }
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -124,12 +128,6 @@ public class FlyingMonsters : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, Vector2.left * _rayDistance);
-    }
-
     private void TakeDamage(int damage)
     {
         _monsrerData.Health -= damage;
@@ -143,5 +141,10 @@ public class FlyingMonsters : MonoBehaviour
     protected virtual void Die()
     {
         Destroy(gameObject);
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, _raycastDirection * _rayDistance);
     }
 }
