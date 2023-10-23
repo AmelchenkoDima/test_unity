@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1688.6667
     height: 854.6667
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Game
   m_RootView: {fileID: 7}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 571.99994
     height: 614.6667
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 24}
   m_Panes:
   - {fileID: 24}
@@ -94,7 +94,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1688.6667
+    width: 1688.6666
     height: 804.6667
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
@@ -119,8 +119,8 @@ MonoBehaviour:
     y: 0
     width: 437.3333
     height: 190
-  m_MinSize: {x: 242, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -171,7 +171,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1688.6667
+    width: 1688.6666
     height: 854.6667
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -196,7 +196,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1688.6667
+    width: 1688.6666
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -218,7 +218,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 834.6667
-    width: 1688.6667
+    width: 1688.6666
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -242,7 +242,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1688.6667
+    width: 1688.6666
     height: 804.6667
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 46
+  controlID: 23
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -292,8 +292,8 @@ MonoBehaviour:
     y: 0
     width: 262
     height: 338
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -395,8 +395,8 @@ MonoBehaviour:
     y: 0
     width: 673.3333
     height: 190
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 25}
   m_Panes:
   - {fileID: 25}
@@ -420,10 +420,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1372.6666
     y: 0
-    width: 316.00012
+    width: 316
     height: 804.6667
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 26}
   m_Panes:
   - {fileID: 26}
@@ -1124,9 +1124,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d0630000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: dcfaffff
+      m_ExpandedIDs: 06fbffff96630000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1197,7 +1197,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/PhysicsMaterial
+    - Assets/Enemies/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1215,7 +1215,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 6e590000
     m_LastClickedID: 22894
-    m_ExpandedIDs: 00000000f0640000f2640000f4640000f6640000f8640000fa640000fc640000fe6400000065000002650000
+    m_ExpandedIDs: 00000000ea640000ec640000ee640000f0640000f2640000f4640000f6640000f8640000fa640000fc640000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1243,7 +1243,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000f0640000f2640000f4640000f6640000f8640000fa640000fc640000fe6400000065000002650000
+    m_ExpandedIDs: ffffffff00000000ea640000ec640000ee640000f0640000f2640000f4640000f6640000f8640000fa640000fc640000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1530,7 +1530,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1380
     y: 80
-    width: 315.00012
+    width: 315
     height: 783.6667
   m_SerializedDataModeController:
     m_DataMode: 0

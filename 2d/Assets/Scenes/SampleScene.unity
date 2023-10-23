@@ -1389,11 +1389,9 @@ MonoBehaviour:
   _afterDeadPrefab: {fileID: 5912914204100988375, guid: 9f3c1ab77cebb104e972f59dd2c2f757, type: 3}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   _rayDistance: 3
-  _patrolEnemy:
-  - 5
-  - -1
+  _patrolPoint: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,7 +1867,7 @@ GameObject:
   - component: {fileID: 2038196995}
   - component: {fileID: 2038196993}
   - component: {fileID: 2038196994}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

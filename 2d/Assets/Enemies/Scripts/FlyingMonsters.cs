@@ -19,10 +19,9 @@ public class FlyingMonsters : MonoBehaviour
     [SerializeField] private GameObject _afterDeadPrefab;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _rayDistance = 3f;
-    [SerializeField] private List<float> _patrolEnemy;
+    [SerializeField] private List<float> _patrolPoint;
 
     private Transform _parrent;
-
 
     private void Start()
     {
@@ -34,12 +33,14 @@ public class FlyingMonsters : MonoBehaviour
     private void Update()
     {
         _visiblePlayer = Physics2D.Raycast(transform.position, _raycastDirection, _rayDistance, _layerMask);
+       
     }
 
 
     private void FixedUpdate()
     {
         ChoisePatrolPoint();
+        AttackPlayer();
     }
 
 
@@ -47,13 +48,23 @@ public class FlyingMonsters : MonoBehaviour
     {
         if (!_visiblePlayer)
         {
-            if (transform.position.x == _patrolEnemy[0])
-            {   
+            //int targetIndex = _patrolPoint.FindIndex(x => transform.position.x == x);
+
+            //if (targetIndex != -1)
+            //{
+            //    _index = targetIndex > 0 ? 0 : 1;
+            //    Flip();
+            //}
+
+            //Patrol(_patrolPoint[_index]);
+
+            if (transform.position.x == _patrolPoint[0])
+            {
                 _monsrerData.isValid = true;
                 _index = 1;
                 Flip();
             }
-            if (transform.position.x == _patrolEnemy[1])
+            if (transform.position.x == _patrolPoint[1])
             {
                 _monsrerData.isValid = false;
                 _index = 0;
@@ -67,20 +78,10 @@ public class FlyingMonsters : MonoBehaviour
 
     private void Patrol(int currentPointIndex)
     {
-        var position = new Vector2(_patrolEnemy[currentPointIndex], transform.position.y);
+        var position = new Vector2(_patrolPoint[currentPointIndex], transform.position.y);
         var currentPosition = _rigidbody.position;
         Vector2 newPosition = Vector2.MoveTowards(currentPosition, position, _monsrerData.SpeedMonster * Time.deltaTime);
         _rigidbody.MovePosition(newPosition);
-    }
-
-
-    private void Flip()
-    {
-        _facingLeft = !_facingLeft;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        _raycastDirection.x = - scale.x;
-        transform.localScale = scale;
     }
 
 
@@ -106,6 +107,14 @@ public class FlyingMonsters : MonoBehaviour
         }
     }
 
+    private void Flip()
+    {
+        _facingLeft = !_facingLeft;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        _raycastDirection.x = - scale.x;
+        transform.localScale = scale;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
