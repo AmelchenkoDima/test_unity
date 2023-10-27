@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]public float _moveX;
     public bool _isJamp;
 
-    private Rigidbody2D _rigidbody;
+    public Rigidbody2D _rigidbody;
     private Animator _animator;
 
     [SerializeField] private LayerMask _layerMask;

@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 37667728}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 37667725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.84, y: -2.15, z: 0}
+  m_LocalPosition: {x: 0, y: -2.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -864,6 +864,26 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -4, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 10
+      m_TileSpriteIndex: 10
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 5, y: 1, z: 0}
     second:
       serializedVersion: 2
@@ -908,7 +928,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: cb5c74982fbd77843a1e7defba5716ce, type: 2}
-  - m_RefCount: 20
+  - m_RefCount: 21
     m_Data: {fileID: 11400000, guid: d96fc2bf3bb8bf84fbb1d11128b5a867, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -926,14 +946,14 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 360ddabd99cc9454983a63b875c5d8af, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 1c94674d58e3ca549a614c5cbf244d37, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: f79d3b09b6593dd4880765b90047b103, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 20
+  - m_RefCount: 21
     m_Data: {fileID: 6564694999658441223, guid: 2a167bccdf36ccd4c9589baa9494557e, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -951,12 +971,12 @@ Tilemap:
     m_Data: {fileID: -6810642566667804811, guid: 73fd8776c1dbbc84e8f53afacf9d526c, type: 3}
   - m_RefCount: 39
     m_Data: {fileID: 1025098624757503153, guid: b379619bbeb8dea4c9be15bf102a5ec2, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 3823214651660395953, guid: 036478afe44ea6146bb33481f885d16c, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -2932792217923982069, guid: 8384b6f62acf99142844b32808355393, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 66
+  - m_RefCount: 68
     m_Data:
       e00: 1
       e01: 0
@@ -975,7 +995,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 66
+  - m_RefCount: 68
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1058,7 +1078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &233943820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1225,7 +1245,7 @@ GameObject:
   - component: {fileID: 512274419}
   - component: {fileID: 512274417}
   - component: {fileID: 512274421}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlyEnemy0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,8 +1261,8 @@ Transform:
   m_GameObject: {fileID: 512274415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.09, y: -0.24, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.29, y: -0.24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 37667728}
@@ -1385,13 +1405,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsrerData: {fileID: 11400000, guid: 2bbb9284eb9594f4ea29b9cf7cfb95e0, type: 2}
+  _patrolPoint:
+  - 2
+  - -4
   _player: {fileID: 2038196992}
   _afterDeadPrefab: {fileID: 5912914204100988375, guid: 9f3c1ab77cebb104e972f59dd2c2f757, type: 3}
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
   _rayDistance: 3
-  _patrolPoint: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1500,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -1.4, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1873,7 +1895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2038196991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1888,6 +1910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveX: 0
   _isJamp: 0
+  _rigidbody: {fileID: 2038196996}
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
