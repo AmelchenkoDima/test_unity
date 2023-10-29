@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    private PlayerController _playerController;
 
-    private void Start()
-    {
-        _playerController = GetComponent<PlayerController>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -20,7 +15,7 @@ public class InputController : MonoBehaviour
 
     private void HorizontalPresed()
     {
-        _playerController._moveX = Input.GetAxis("Horizontal");
+        PlayerController.I._moveX = Input.GetAxis("Horizontal");
     }
 
 
@@ -28,9 +23,19 @@ public class InputController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space)) 
         {
-            _playerController._isJamp = true;
+            PlayerController.I.IsJamp = true;
             return;
         }
-        _playerController._isJamp = false;
+        PlayerController.I.IsJamp = false;
+    }
+
+    private void ShootPresed()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            PlayerController.I.IsSoot = true;
+            return;
+        }
+        PlayerController.I.IsSoot = false;
     }
 }

@@ -1895,7 +1895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2038196991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,15 +1908,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8ce3b4e9c854b4a80174e4cc8a1f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletPoolManager: {fileID: 0}
   _moveX: 0
-  _isJamp: 0
-  _rigidbody: {fileID: 2038196996}
+  IsJamp: 0
+  IsSoot: 0
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
   _moveSpeed: 2
   _jampHeght: 5
   _extraJump: 1
+  _playerHealth: 50
+  _playerDamage: 50
 --- !u!4 &2038196992
 Transform:
   m_ObjectHideFlags: 0

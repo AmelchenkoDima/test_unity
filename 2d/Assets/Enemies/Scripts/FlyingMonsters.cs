@@ -13,7 +13,6 @@ public class FlyingMonsters : MonoBehaviour
     private bool _visiblePlayer;
     private Vector2 _lastPlayerPosition;
     private int _index;
-    //private bool _facingLeft = true;
     private Vector2 _raycastDirection;
 
     [SerializeField] private List<float> _patrolPoint;
@@ -23,7 +22,6 @@ public class FlyingMonsters : MonoBehaviour
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _rayDistance = 3f;
 
-    private Transform _parrent;
 
     private void Start()
     {
@@ -84,7 +82,6 @@ public class FlyingMonsters : MonoBehaviour
         var currentPosition = _rigidbody.position;
         Vector2 newPosition = Vector2.MoveTowards(currentPosition, position, _monsrerData.SpeedMonster * Time.deltaTime);
         _rigidbody.MovePosition(newPosition);
-        //UnityEngine.Debug.Log(newPosition);
     }
 
 
@@ -92,10 +89,11 @@ public class FlyingMonsters : MonoBehaviour
     {
         if (_visiblePlayer)
         {
+            
             _lastPlayerPosition = _player.position;
             Vector2 direction = (_player.position - transform.position).normalized;
             _rigidbody.velocity = new Vector2(direction.x * _monsrerData.AttackSpeed, _rigidbody.velocity.y);
-
+           
         }
     }
 
@@ -109,18 +107,22 @@ public class FlyingMonsters : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                var coin = Instantiate(_afterDeadPrefab, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                TakeDamage(PlayerController.I._playerDamage);
             }
         }
 
         if (collPosition.x < transform.position.x)
         {
-            //Debug.Log("игрок слево");
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                UnityEngine.Debug.Log("атака");
+                //PlayerController.I.TakeDamage(_monsrerData.AttackPower);
+                _rigidbody.AddForce(new Vector2(_monsrerData.SpeedRebound, 0), ForceMode2D.Impulse);
+            }
         }
 
     }
-
+    
 
     private void TakeDamage(int damage)
     {
@@ -134,8 +136,11 @@ public class FlyingMonsters : MonoBehaviour
 
     protected virtual void Die()
     {
+        var coin = Instantiate(_afterDeadPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

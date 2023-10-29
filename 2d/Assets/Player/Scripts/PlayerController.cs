@@ -1,33 +1,40 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController I;
+
+    [SerializeField] private BulletPoolManager _bulletPoolManager;
+    private Rigidbody2D _rigidbody;
+    private Animator _animator;
    
     [HideInInspector]public float _moveX;
-    public bool _isJamp;
-
-    public Rigidbody2D _rigidbody;
-    private Animator _animator;
+    public bool IsJamp;
+    public bool IsSoot;
 
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _moveSpeed = 2f;
     [SerializeField] private float _jampHeght = 2f;
-
     [SerializeField] private int _extraJump = 2;
 
-    private float _groundHeight = 1f;
+    [SerializeField] private int _playerHealth = 50;
+    public int _playerDamage = 50;
 
     private bool _isEnemy;
     private bool _isGrounded;
     private bool _facingRight = true;
     private int _remainingJump;
+    private float _groundHeight = 1f;
 
     #region Animation
     public static int _animMoveId = Animator.StringToHash("move");
     #endregion
+
+    private void Awake() => I = this;
 
     private void Start()
     {
@@ -42,7 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         GroundCheck();
         Movement();
-
+        //Shoot();
     }
 
     private void Movement()
@@ -68,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jamp()
     {
-        if(_isJamp ) 
+        if(IsJamp ) 
         { 
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jampHeght);
             _remainingJump--;
@@ -97,5 +104,34 @@ public class PlayerController : MonoBehaviour
         {
             Jamp();
         }
+    }
+
+    //private void Shoot()
+    //{
+    //    if (IsSoot) 
+    //    { 
+    //        GameObject bullet = _bulletPoolManager.GetBullet();
+    //        if (bullet != null)
+    //        {
+    //            bullet.transform.position = transform.position;
+    //            bullet.GetComponent<Rigidbody2D>().velocity = Vector2.right * bullet.GetComponent<BulletController>()._bulletSpeed;
+    //        }
+    //    }
+    //}
+
+
+    public void TakeDamage(int damage)
+    {
+        _playerHealth -= damage;
+        if (_playerHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+
+    protected virtual void Die()
+    {
+        Destroy(gameObject);
     }
 }

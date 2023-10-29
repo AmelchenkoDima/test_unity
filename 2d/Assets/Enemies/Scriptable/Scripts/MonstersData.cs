@@ -11,5 +11,6 @@ public class MonstersData : ScriptableObject
     public float AttackSpeed;
     public float SpeedMonster;
     public float BulletSpeed;
+    public float SpeedRebound;
     public bool isValid;
 }

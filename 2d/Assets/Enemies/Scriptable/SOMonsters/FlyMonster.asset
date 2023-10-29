@@ -17,4 +17,5 @@ MonoBehaviour:
   AttackSpeed: 4
   SpeedMonster: 2
   BulletSpeed: 0
+  SpeedRebound: 8
   isValid: 1
